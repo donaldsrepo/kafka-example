@@ -44,3 +44,4 @@ print(f"offset: {record_metadata.offset}")
 
 # producer.send('sample', b'Hello, World!')
 # producer.send('sample', key=b'message-two', value=b'This is Kafka-Python')
+print()
