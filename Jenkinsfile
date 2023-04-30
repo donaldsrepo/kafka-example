@@ -1,3 +1,4 @@
+CODE_CHANGES == true
 pipeline {
   agent any
   parameters {
