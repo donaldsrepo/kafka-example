@@ -8,9 +8,15 @@ pipeline {
     //TEST_PIPELINE = credentials('test-pipeline')
   }
   stages {
-    stage("build") {
+    stage("build") { 
+      when {
+        expression {
+          BRANCH_NAME == 'dev' && CODE_CHANGES == true
+        }
+      }
       steps {
         echo "building"
+        echo "building version ${NEW_VERSION}"
       }
     }
     stage("test") {
