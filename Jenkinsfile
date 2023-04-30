@@ -1,4 +1,4 @@
-CODE_CHANGES == true
+CODE_CHANGES = true
 pipeline {
   agent any
   parameters {
