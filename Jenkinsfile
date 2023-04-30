@@ -7,7 +7,7 @@ pipeline {
   }
   environment {
     NEW_VERSION = '1.3'
-    //TEST_PIPELINE = credentials('test-pipeline')
+    TEST_PIPELINE = credentials('test-pipeline')
   }
   stages {
     stage("build") { 
