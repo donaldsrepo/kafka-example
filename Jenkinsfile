@@ -34,7 +34,7 @@ pipeline {
     stage("deploy") {
       steps {
         //echo "deploying"
-        echo "deploying version ${params.VERSION}"
+        echo "deploying version ${params.VERSION} using credentials ${TEST_PIPELINE}"
       }
     }
   }
