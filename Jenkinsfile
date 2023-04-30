@@ -24,7 +24,9 @@ pipeline {
         }
       }
       steps {
-        echo "building"
+	      script {
+		      gv.buildApp()
+		    }
         echo "building version ${NEW_VERSION}"
       }
     }
