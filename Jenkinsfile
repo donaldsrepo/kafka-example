@@ -6,9 +6,9 @@ pipeline {
     choice(name: 'VERSION', choices: ['1.1','1.2'], description: 'pick a version')
     // booleanParam
   }
-  tools {
+  //tools {
     // add any tools to build your apps, such as maven, gradle and jdk
-  }
+  //}
   environment {
     NEW_VERSION = '1.3'
     TEST_PIPELINE = credentials('test-pipeline')
@@ -43,15 +43,15 @@ pipeline {
       }
     }
   }
-  post {
-    always {
+  //post {
+  //  always {
       //
-    }
-    success {
+  //  }
+  //  success {
       //
-    }
-    failure {
+  //  }
+  //  failure {
       //
-    }
-  }
+  //  }
+  //}
 }
