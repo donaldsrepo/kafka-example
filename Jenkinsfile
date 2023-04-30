@@ -10,6 +10,13 @@ pipeline {
     TEST_PIPELINE = credentials('donaldsrepo')
   }
   stages {
+    stage("init") { 
+      steps {
+	      script {
+		      gv = load "script.groovy"
+		    }
+      }
+    }
     stage("build") { 
       when {
         expression {
