@@ -1,6 +1,11 @@
 CODE_CHANGES = true
 pipeline {
   agent any
+  parameters {
+    string(name: 'VERSION', defaultValue: '', description: 'version to deploy')
+    choice(name: 'VERSION, choices: ['1.1','1.2'], description: '')
+    // booleanParam
+  }
   tools {
     // add any tools to build your apps, such as maven, gradle and jdk
   }
@@ -23,7 +28,7 @@ pipeline {
     stage("test") {
       when {
         expression {
-          BRANCH_NAME == 'dev' || BRANCH_NAME = 'master'
+          params.executeTests == true
         }
       }
       steps {
@@ -33,7 +38,7 @@ pipeline {
     stage("deploy") {
       steps {
         echo "deploying"
-        echo "deploying with ${TEST_PIPELINE}"
+        echo "deploying version ${params.VERSION} with ${TEST_PIPELINE}"
         // sh "scriptname {TEST_PIPELINE}"
       }
     }
